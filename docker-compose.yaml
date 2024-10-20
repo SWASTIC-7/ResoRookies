@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: ./frontend # Path to your React app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80" # Serve the frontend on port 3000
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend # Path to your Go backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Expose the Go app on port 8080
+    networks:
+      - app-network
+    environment:
+      - API_URL=http://localhost:8080/api # Example env variable
+
+networks:
+  app-network:
+    driver: bridge
+
