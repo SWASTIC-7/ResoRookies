@@ -1,0 +1,16 @@
+.AboutUs {
+    position: absolute;
+    top: 20dvh;
+    left: 30vw;
+    height: 70dvh;
+    width: 40vw;
+    background-image: linear-gradient(to bottom,#ff724327,#fd3f003a);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    h2{
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 1vw;
+    }
+    }

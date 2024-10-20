@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+
+.Landing_page {
+    overflow: hidden;
+    width: 100vw;
+    height: 100dvh;
+    position: absolute;
+    top: 0px;
+    h1{
+        width: 100vw;
+        z-index: 2;
+        color: #FD3F00;
+        position: absolute;
+        text-align: center;
+        margin-top: 10%;
+        font-family: "Rubik Distressed", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 4vw;
+        line-height: 5vw;
+        span{
+            color: #FF7243;
+            font-size: 5vw;
+        }
+
+    }
+}
+.filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.video{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+.btns {
+    align-items: center;
+}
+.btn1{
+    height: 3vw;
+    width: 20vw;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 40vw;
+    border-radius: 3vw;
+    background-image: linear-gradient(to right,#FD3F00,#FF7243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    h3 {
+        font-size: 1.2vw;
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+}
+.btn1:hover {
+    background-image: linear-gradient(to left,#ca5a34,#481605);
+
+}
+.btn2{
+    height: 3vw;
+    width: 20vw;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 55vw;
+    border-radius: 3vw;
+    background-image: linear-gradient(to right,#FF7243,#FD3F00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    h3 {
+        font-size: 1.2vw;
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+}
+.btn2:hover {
+    background-image: linear-gradient(to right,#ca5a34,#481605);
+
+}

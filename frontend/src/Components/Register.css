@@ -1,0 +1,61 @@
+.Register {
+    position: absolute;
+    top: 20dvh;
+    left: 30vw;
+    height: 70dvh;
+    width: 40vw;
+    background-image: linear-gradient(to bottom,#ff724327,#fd3f003a);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+    h2  {
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2vw;
+        padding: 0.8vw;
+        margin-top: 0;
+        margin-bottom: 0;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    input{
+        background-color: transparent;
+        border: 2px solid white;
+        padding: 1vw;
+        width: 80%;
+        margin: 0;
+        /* border: none; */
+    }   
+    h3{
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.2vw;
+        margin: 0;
+    }
+
+    button{
+        background-image: linear-gradient(to right,#FD3F00,#FF7243);
+        border: none;
+        padding: 1vw;
+        width: 80%;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5vw;
+        margin: 0;
+    }
+    button:hover{
+        background-image: linear-gradient(to left,#ca5a34,#481605);
+    }
+
+    
+}

@@ -1,0 +1,131 @@
+.Player_page {
+    width: 100vw;
+    height: 100dvh;
+    background-color: #392018;
+    position: absolute;
+    top: 0;
+    
+}
+.wave {
+    width: 80vw;
+    height: 70dvh;
+    position: absolute;
+    margin-top: 3dvh;
+    margin-left: 10vw;
+    filter:blur(50px);
+    background-color: #994b3170;
+    animation: boom 2s infinite;
+}
+.wi{
+    width: 80vw;
+    height: 70dvh;
+    position: absolute;
+    margin-top: 3dvh;
+    margin-left: 10vw;
+    filter:blur(50px);
+    background-color: #994b3170;
+    
+}
+@keyframes boom {
+    0%{
+        transform: scale(1);
+    }
+    50%, 70%{
+        transform: scale(1.1);
+    }
+    20%{
+        transform: scale(0.8);
+    }
+    100% ,80%{
+        transform: scale(1);
+    }
+    90%, 30%{
+        transform: scale(1.2);
+    }
+}
+
+
+.player{
+    width: 60vw;
+    height: 50dvh;
+    position: relative;
+    margin-top: 10dvh;
+    margin-left: 20vw;
+    background-color: white;
+    filter: blur(10px);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* filter: blur(10px); */
+        box-shadow: inset 0 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+}
+.C_img{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    top: 50%;
+    animation: rot 5s infinite linear;
+   
+}
+@keyframes rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.cc {
+    display: flex;
+    gap: 2vw;
+    justify-content: space-between;
+    position: absolute;
+    width: 50vw;
+    height: 50dvh;
+    top: 10dvh;
+    left: 25vw;
+}
+.content {
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    h1{
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    h2{
+        font-family: "Wallpoet", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+}
+
+
+.controls {
+    display: flex;
+    gap: 2vw;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        cursor: pointer;
+        width: 2vw;
+        height: 2vw;
+    }
+    
+}
+.controls .prev{
+    transform: rotate(180deg);
+}
