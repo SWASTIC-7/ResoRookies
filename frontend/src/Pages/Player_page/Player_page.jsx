@@ -15,7 +15,7 @@ function Player_page() {
     // const wave = document.querySelector('.wave')
         
 
-    let audio = new Audio(`http://10.81.87.61:8080/songs/${arr[audioIndex]}`);  //loading audiofile form server
+    let audio = new Audio(`/api/songs/${arr[audioIndex]}`);  //loading audiofile form server
     audioRef.current = audio;
     useEffect(() => {
         
@@ -28,7 +28,7 @@ function Player_page() {
         
         
        //connect to websocket
-        const socket = new WebSocket("ws://10.81.87.61:8080/ws?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'));
+        const socket = new WebSocket("/api/ws?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'));
         
         audio.preload = "auto"; 
         
@@ -127,7 +127,7 @@ function Player_page() {
        
         if(play){
             audioRef.current.pause();
-            fetch("http://10.81.87.61:8080/stop?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
+            fetch("/api/stop?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
             .then(res=>res.json())
             .then(data=>{
                 console.log(data)
@@ -143,9 +143,9 @@ function Player_page() {
         }
         else{
             
-            fetch("http://10.81.87.61:8080/start?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
+            fetch("/api/start?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
             console.log('playing')
-            fetch("http://10.81.87.61:8080/sync?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
+            fetch("/api/sync?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
          
         }
     }
@@ -158,7 +158,7 @@ function Player_page() {
         setAudioIndex(audioIndex+1)
        
         
-        fetch("http://10.81.87.61:8080/start?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
+        fetch("/api/start?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
         
     }
 
@@ -167,7 +167,7 @@ function Player_page() {
        
 
         setAudioIndex(audioIndex-1)
-        fetch("http://10.81.87.61:8080/start?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
+        fetch("/api/start?room_id="+localStorage.getItem('room')+"&username="+localStorage.getItem('user'))
         
     }
     

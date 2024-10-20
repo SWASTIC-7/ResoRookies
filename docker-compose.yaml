@@ -1,24 +1,31 @@
-version: "3.8"
+# docker-compose.yml
+version: '3'
+
 services:
-  frontend:
-    build:
-      context: ./frontend # Path to your React app
-      dockerfile: Dockerfile
-    ports:
-      - "3000:80" # Serve the frontend on port 3000
+  backend:
+    build: ./backend
+    container_name: backend
     networks:
       - app-network
 
-  backend:
-    build:
-      context: ./backend # Path to your Go backend
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080" # Expose the Go app on port 8080
+  frontend:
+    build: ./frontend
+    container_name: frontend
     networks:
       - app-network
-    environment:
-      - API_URL=http://localhost:8080/api # Example env variable
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - app-network
 
 networks:
   app-network:

@@ -1,17 +1,32 @@
-# Dockerfile for Go Backend
+# Build the application from source
+FROM golang:1.22 AS build-stage
 
-# Stage 1: Build the Go binary
-FROM golang:1.20-alpine AS builder
 WORKDIR /app
+
 COPY go.mod go.sum ./
 RUN go mod download
-COPY . .
-RUN go build -o main .
 
-# Stage 2: Run the Go binary
-FROM alpine:latest
+COPY ./cmd ./cmd
+COPY ./pkg ./pkg
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o /program ./cmd
+
+# Run the tests in the container
+FROM build-stage AS run-test-stage
+RUN go test -v ./pkg/helper
+
+# Deploy the application binary into a lean image
+FROM alpine:latest AS build-release-stage
+
 WORKDIR /app
-COPY --from=builder /app/main ./
-EXPOSE 8080
-CMD ["./main"]
 
+COPY ./songs ./songs
+
+COPY --from=build-stage /program ./program
+
+EXPOSE 3000
+
+RUN adduser -D nonroot
+USER nonroot
+
+CMD ["./program"]

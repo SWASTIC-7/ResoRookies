@@ -28,7 +28,7 @@ function Register() {
         e.preventDefault()
         
         console.log(user)
-        fetch('http://10.81.87.61:8080/create_room',{
+        fetch('/api/create_room',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
