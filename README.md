@@ -1,4 +1,4 @@
-# 🎶 RespoRookies
+# 🎶 ResoRookies
 
 ResoRookies is a real-time collaborative music player that allows users to listen to synchronized music across multiple devices. Built with WebSocket technology, it ensures that everyone in a group hears the same song at the same time, no matter where they are.
 
